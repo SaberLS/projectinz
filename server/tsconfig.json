@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "composite": true,
+
+    "noEmit": true,
+    "outDir": "dist", // Compiled JS output
+    "paths": {
+      "@projektinz/shared/*": ["../shared/src/*"]
+    },
+    "rootDir": "src" // source files location
+  },
+  "exclude": ["node_modules", "dist", "tests"],
+  "extends": "../tsconfig.base.json",
+  "include": ["src"]
+}

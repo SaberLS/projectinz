@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "jsx": "react-jsx",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "noEmit": true,
+
+    "paths": {
+      "@projektinz/shared": ["shared/src"],
+      "@projektinz/shared/*": ["shared/src/*"]
+    },
+    /* Linting */
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "types": ["node"],
+    "useDefineForClassFields": true
+  },
+  "extends": "../tsconfig.base.json",
+  "include": ["src"]
+}

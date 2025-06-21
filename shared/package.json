@@ -1,0 +1,33 @@
+{
+  "name": "@projektinz/shared",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    },
+    "./utils": {
+      "import": "./src/utils/index.ts"
+    },
+    "./constants": {
+      "import": "./src/constants/index.ts"
+    }
+  },
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "prebuild": "pnpm clean",
+    "build": "node esbuild.config.js && tsc -p tsconfig.json",
+    "clean": "rimraf dist tsconfig.tsbuildinfo",
+    "clean:all": "rimraf dist tsconfig.tsbuildinfo node_modules",
+    "clean:restart": "pnpm clean:all && pnpm --filter shared install"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.5",
+    "esbuild-node-externals": "^1.18.0"
+  }
+}

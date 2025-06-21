@@ -1,0 +1,36 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "prebuild": "pnpm clean",
+    "build": "node esbuild.config.js",
+    "clean": "rimraf dist",
+    "clean:all": "rimraf dist node_modules",
+    "clean:restart": "pnpm clean:all && pnpm --filter server install",
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx dist/index.js",
+    "test": "jest",
+    "test:ci": "jest --runInBand",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@projektinz/shared": "workspace:*",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongodb": "^6.17.0",
+    "mongoose": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "esbuild": "^0.25.5",
+    "esbuild-node-externals": "^1.18.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}
